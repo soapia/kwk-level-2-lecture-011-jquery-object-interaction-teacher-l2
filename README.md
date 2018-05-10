@@ -28,9 +28,9 @@ Easy enough! This would change the paragraph color to green. You might be thinki
 
 ### animate
 
-Changing the text color is nifty, but let's explore something that definitely cannot be done with just CSS alone. jQuery has tons of animation methods: The animate function allows you to create a custom animation on any HTML element. The function accepts a CSS object as a parameter.
+Changing the text color is nifty, but let's explore something that definitely cannot be done with just CSS alone. jQuery has tons of animation methods: The animate method allows you to create a custom animation on any HTML element. The method accepts a CSS object as a parameter.
 
-Let's say we have an image of a cat on our website that we want to get bigger, we could achieve that with the animate function:
+Let's say we have an image of a cat on our website that we want to get bigger, we could achieve that with the animate method:
 
 HTML:
 
@@ -54,9 +54,9 @@ $('img').animate({
 
 
 
-##### fadeOut
+#### fadeOut
 
-In addition to moving stuff around, we can animate traits of an element without moving the element itself. The `fadeOut` function, for example, changes the opacity of the selected elements.
+In addition to moving stuff around, we can animate traits of an element without moving the element itself. The `fadeOut` method, for example, changes the opacity of the selected elements.
 
 Let's take the cat image again:
 
@@ -64,7 +64,7 @@ Let's take the cat image again:
 <img src="images/cat.png">
 ```
 
-We could make the cat disappear by using `fadeOut`. This function also accepts a parameter of the amount of time in milliseconds for the item to fade:
+We could make the cat disappear by using `fadeOut`. This method also accepts a parameter of the amount of time in milliseconds for the item to fade:
 
 ```js
 $('img').fadeOut(6000);
@@ -79,14 +79,56 @@ Keep in mind that the CSS position default for all elements is static. Therefore
 To move an element left, right up and down, the simplest way is by changing either the top, bottom, left or right properties. These can be absolute or relative:
 
 ```js
-$("button").click(function(){
+$("button").click(method(){
         $("#img1").animate({top: '200px'}, "fast");
         $("#img2").animate({left: '+=20px'}, "slow");
     });
 ```
 
-In the above function, the click of the button triggers two events. The element with the id #img1 moves so that it's top edge is 200px below it's nearest ancestor. The element with the id #img2 moves so that it's left edge is 20px further right than it used to be. And all of this happens with the click from the user! Now we're really starting to get a feel for how pages work.
+In the above method, the click of the button triggers two events. The element with the id #img1 moves so that it's top edge is 200px below it's nearest ancestor. The element with the id #img2 moves so that it's left edge is 20px further right than it used to be. And all of this happens with the click from the user! Now we're really starting to get a feel for how pages work.
 
 
 
-### Interactivity
+### Data & Interactivity
+
+So far we've learned how to manipulate elements with direct jQuery code. But we don't expect our users to do that! We can add interactivity to the page through things like buttons, forms and other ways to monitor user input, to give them a sense of control over the page experience. We can also collect data from them.
+
+We've already learned about forms, but there are several things we can do enhance them. When users enter data on a form there is often a need to validate the data entered. We could have the user submit the form and task our server with the job, but there are several downsides to this.
+
+Enter JavaScript! By allowing us to **script on the frontend**, we can provide instantaneous feedback to the user. WIth traditional JavaScript we could accomplish this, but when we have jQuery at our disposal we're able to do it so much easier. Let's say you're building a form for an online order. Typically, you give your user an option to check if their shipping address is different than their billing address. If they click the box that they are different addresses, then they would expect an additional form to fill out for shipping address. In order to achieve this, you would want to check the `value` of the checkbox, and trigger the form to be filled out if it is checked with the `val` method. This allows us to collect all the data on a single page determined by logic, as opposed to two. 
+
+The `val()` method returns the `value` attribute for an HTML element. 
+
+Given the following HTML form for our shopping checkout:
+
+```html
+<form>
+  <input type="checkbox" value="same">Same as billing address
+  <input type="checkbox" value="different">Different than billing address
+</form>
+```
+
+We can **select** the value of an input with:
+```js
+$('input').val();
+```
+
+Very elegant! One thing to remember is that this method returns the very first match, so it would find the first input field and return `"same"`. 
+
+What if we wanted to consider both? We could change our selector to look for the *selected* checkbox:
+
+```js
+$('input:checked').val();
+```
+
+If you wanted to change the value of the input to "choice Z" instead of `"same"`, you would just pass a parameter to the `val` method:
+
+```js
+$('input').val("choice Z");
+```
+
+
+
+#### Wrapping Up
+
+jQuery gives us a lot of flexibity and elegance when working with JavaScript. Selecting is only half the battle, and by leveraging the built-in methods, we learned about the heavy lifting jQuery provides to us.
