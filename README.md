@@ -21,44 +21,47 @@ the ability to implement very cool interactive actions and effects on DOM
 elements via **methods**.
 
 We have many different components that make up a typical webpage, and jQuery has
-specific methods that act on these components. Take, for example, how traditional (such as setting a background color of an element) can be done with CSS. As you know, this would be a one-time setting
-when loading the page. What if instead we wanted to tweak the background color after the page loads? This is where jQuery can really spice things up: using some of jQuery's built-in methods, we can do just that! Let's take a look:
+specific methods that act on these components. Take, for example, how
+traditional (such as setting a background color of an element) can be done with
+CSS. As you know, this would be a one-time setting when loading the page. What
+if instead we wanted to tweak the background color after the page loads? This is
+where jQuery can really spice things up: using some of jQuery's built-in
+methods, we can do just that! Let's take a look:
+
+**NOTE:** Use the starter files throughout the lecture to show the code in real time. `open index.html` in Chrome.
 
 ```js
-$("p").css("background-color", "green");
+$('body').css("background-color", "green")
 ```
 
-Easy enough! This would change the paragraph background color to green. You
-might be thinking that we could simply achieve the same effect through setting
-the value in the Developer Console yourself, after the page has loaded. Indeed,
-this would accomplish the same result, but remember that using jQuery affords us
-the ability to do so **programatically**, and operate based on other conditions
-or logic (more on that later).
+Easy enough! This will change the background color to green. We can see this in
+action by running it directly in Chrome Developer Console or by placing it into
+our `index.js` to trigger it programmatically.  
 
-### Animate
 
-Changing the text color is nifty, but let's explore something that definitely
-cannot be done with just CSS alone. jQuery has tons of animation methods: The
-animate method allows you to create a custom animation on any HTML element. The
-method accepts a CSS object as a parameter.
+### Animations
 
-Let's say we have an image of a cat on our website that we want to get bigger,
-we could achieve that with the animate method:
+Changing the background color is nifty, but let's explore something a little
+more involved. jQuery has tons of animation methods: The `animate` method in
+particular allows us to create a custom animation on any HTML element. The
+method accepts an object of CSS `key: value`s as an argument.
 
-HTML:
-
-```html
-<img src="images/cat.png">
-```
-
-jQuery:
+Let's imagine we have an image of a cat on our website (which we do) and that we
+want to make it bigger (which we very much do). We could achieve this with the
+`animate` method. Go ahead and put it in our `index.js` (jQuery, `index.js`, and `index.css` have all
+already been included in `index.html`):
 
 ```js
-$('img').animate({
-  height: '500px'})
+var precious = $("#dank-cat-gif")
+
+// here, we are passing in an object saying which attributes we want to change to what values
+precious.animate({
+  height: "100%", // 100% of its parent's height (which is the whole window)
+  width: "100%" // 100% of its parent's width (which is the whole window)
+})
 ```
 
- Any animator will tell you that how smooth something moves is just as
+Any animator will tell you that how smooth something moves is just as
 important as it moving itself. jQuery has that covered, too, and the speed can
 optionally be set as well. The element will adjust to the new parameters over
 the given amount of time (in milliseconds):

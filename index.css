@@ -1,0 +1,19 @@
+html, body {
+  background-color: #F88;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dank-cat-gif {
+  width: 100px;
+}
