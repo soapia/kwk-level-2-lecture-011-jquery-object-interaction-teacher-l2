@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>jQuery Fun</title>
+    <title>Precious' jQuery Simulator</title>
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <div id="wrapper">
       <img id="dank-cat-gif" src="http://i.imgur.com/Ke9t5Sg.gif" alt="">
     </div>
-    <!-- jQuery import -->
+    <audio id="roar" src="./roar.mp3" type="audio/mpeg"></audio>
+    
+    <script>function roar() { document.getElementById("roar").play() }</script>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="./index.js"></script>
   </body>

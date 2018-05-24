@@ -61,39 +61,33 @@ precious.animate({
 })
 ```
 
-Any animator will tell you that how smooth something moves is just as
+Any professional animator will tell you that how smooth something moves is just as
 important as it moving itself. jQuery has that covered, too, and the speed can
-optionally be set as well. The element will adjust to the new parameters over
+optionally be set. The element will adjust to the new parameters over
 the given amount of time (in milliseconds):
 
 ```js
-$('img').animate({
-  height: '500px'},5000)
+var precious = $("#dank-cat-gif")
+
+precious.animate({
+  height: "100%", 
+  width: "100%" 
+}, 1500)
 ```
 
+...in fact, we can take even take this a step further and fire off a function when the animation completes...
 
-
-#### fadeOut
-
- In addition to moving stuff around, we can animate traits of an element
-without moving the element itself. The `fadeOut` method, for example, changes
-the opacity of the selected elements.
-
-Let's take the cat image again:
-
-```html
-<img src="images/cat.png">
-```
-
-We could make the cat disappear by using `fadeOut`. This method also accepts a
-parameter of the amount of time in milliseconds for the item to fade:
+**NOTE:** To protect you from annoying ads, Chrome _won't play the following audio if you don't click the screen before the animation ends_. Make sure to click or interact with the website in any way before the animation completed. This is example is just for fun, try not to let students get hung up on audio elements, why the sound won't play unless we interact first, or why this isn't done with jQuery in `index.html`
 
 ```js
-$('img').fadeOut(6000);
+var precious = $("#dank-cat-gif")
+
+precious.animate({
+  height: "100%", 
+  width: "100%" 
+}, 1500, roar) // roar is a function that is provided in index.html. Here, we are using as a callback that is invoked once jQuery says "alright! the animation is complete!"
 ```
 
-Remember that these are all actions we can trigger based on something else, like
-the **event listeners** we learned about earlier.  
 
 #### Changing Position and Relative Values with Events
 
