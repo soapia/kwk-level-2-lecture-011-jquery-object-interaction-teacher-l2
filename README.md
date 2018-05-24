@@ -1,36 +1,32 @@
 # jQuery Methods, Animation
 
 
-
 ## Objectives
 
-We've learned about selectors, but that's only half of it! Once we've designated
-what element to manipulate, jQuery provides gives us the ability to perform very
-cool actions, effects and interactivity on DOM elements through **methods**.
+This lesson aims to dive deeper into jQuery, and how we can use it to augment
+our websites further with animations and interactivity. 
 
 ## SWBATS
 
-+ Explain what a jQuery method is
-+ Explain the capabilities and limitations of what can be performed with methods, and when to use them
-+ Use jQuery methods to manipulate specific UI elements
-
++ JQUERY - Explain what a jQuery method is
++ JQUERY - Explain the capabilities and limitations of what can be performed with methods, and when to use them
++ JQUERY - Use jQuery methods to manipulate specific UI elements
 
 
 ## Introduction
 
- We have many different kinds of ingredients involved that make up a typical
-webpage, and jQuery has specific methods that relate to these components. We've
-learned that traditional styling can be done through CSS, which would be
-dictated as a one-time setting when loading the page. This is where things can
-get even more interesting: what if we wanted to tweak this after the page
-loads? Using some of jQuery's built-in CSS methods, we can do just that. Let's
-take a look:
+We've learned about selectors, and done a crash course on event listeners, but
+that's only half of it! Once we have an element in hand, jQuery provides us with
+the ability to implement very cool interactive actions and effects on DOM
+elements via **methods**.
 
-```javascript
+We have many different components that make up a typical webpage, and jQuery has
+specific methods that act on these components. Take, for example, how traditional (such as setting a background color of an element) can be done with CSS. As you know, this would be a one-time setting
+when loading the page. What if instead we wanted to tweak the background color after the page loads? This is where jQuery can really spice things up: using some of jQuery's built-in methods, we can do just that! Let's take a look:
+
+```js
 $("p").css("background-color", "green");
 ```
-
-
 
 Easy enough! This would change the paragraph background color to green. You
 might be thinking that we could simply achieve the same effect through setting
