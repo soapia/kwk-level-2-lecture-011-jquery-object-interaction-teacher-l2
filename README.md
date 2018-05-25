@@ -1,11 +1,10 @@
 # jQuery Methods and Animations
 
-**NOTE:** This lecture makes use of starter code found in `index.html`,
-`index.css`, `index.js`. Unlike the previous materials, we have included all the
-relative imports, (jQuery, the stylesheet, and our script), in `index.html`.
-Still, take a moment to show students the files and remind them where we are
-importing them and why we have to in `index.html`. 
-
+**NOTE:** The majority of this lecture makes use of starter code found in
+`index.html`, `index.css`, `index.js`. Unlike the previous materials, we have
+included all the relative imports, (jQuery, the stylesheet, and our script), in
+`index.html`. Still, take a moment to show students the files and remind them
+where we are importing them and why we have to in `index.html`.  
 
 ## Objectives
 
@@ -141,12 +140,34 @@ the few tools we have now, there is endless [dankification][dankification] we
 can do to our (and other people's!) websites.
 
 
-### Data & Interactivity
+### Interactivity and Validation
 
-So far, we've learned how to manipulate elements with direct jQuery code. But we
-don't expect our users to do that! We can add interactivity to the page through
-things like buttons, forms and other ways to monitor user input, to give them a
-sense of control over the page experience. We can also collect data from them.
+So far, we've mostly been manipulating elements directly jQuery code. What we
+would like to do is abstract the actual function calls and code from the user,
+so they simply experience interactivity as magic!
+
+We can add interactivity to the page with our old friend, the **event
+listener**, to give them a sense of response and control over the page. Let's
+see how this is particularly useful through the lens of the ubiquitous **form**!
+
+<p align="center"><a href="https://imgflip.com/i/2azju1"><img src="https://i.imgflip.com/2azju1.jpg"/></a> </p>
+
+Maybe?<sup> Not really...but we can make them nice for users!</sup>
+
+As you know, forms are ubiquitous on the web! We see them everywhere, from
+Amazon Shopping carts to clickbait surveys! The amount of work that has gone
+into integrating the creation and submittal of forms in all aspects of web
+programming is staggering. Let's see how we can do our little part to make them
+even better with some **validation event listeners**! (who doesn't like a little
+validation, anyways?).
+
+Consider: have you ever entered data into a form, clicked "submit" and waited
+for the page to refresh only to be told your phone number needs to be in a
+different format? Oh, and along with that format issue, the website went ahead
+and erased your whole form? This is not dank -- this is the opposite of dank and 
+**_we_** are going to fix it!
+
+**NOTE:** This example makes use 
 
 When users enter data on a form there is often a need to validate the data
 entered. We could have the user submit the form and task our server with the
