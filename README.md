@@ -85,33 +85,47 @@ var precious = $("#dank-cat-gif")
 precious.animate({
   height: "100%", 
   width: "100%" 
-}, 1500, roar) // roar is a function that is provided in index.html. Here, we are using as a callback that is invoked once jQuery says "alright! the animation is complete!"
+}, 1500, roar) // roar is a function that is provided in index.html. Here, we are using it as a callback that is invoked once jQuery says "alright! the animation is complete!"
 ```
 
 
 #### Changing Position and Relative Values with Events
 
-Keep in mind that the CSS position default for all elements is static.
-Therefore, any jQuery animation that moves an object will not work unless you
-set the CSS position to one of the other values: relative, absolute or fixed.
+Keep in mind that the [CSS default position][css-position] for all elements is
+static (i.e. `position: static` a.k.a. positions itself according to the flow of
+the page and elements around it). Therefore, any jQuery animation that moves an
+object will not work unless you set the CSS `position` to one of the other
+values: `relative`, `absolute` or `fixed`.
 
-To move an element left, right up and down, the simplest way is by changing
-either the top, bottom, left or right properties. These can be absolute or
-relative:
+**NOTE:** To make this real, open up the Chrome console and attempt to execute: 
+`precious.animate({top: '200px'})`. This won't work, because we haven't defined
+a `position` value for the `<img>` tag (it has defaulted to `static`). In the
+elements tab, locate the `<img>` DOM element and update its style with 
+`position: relative` and try re-running the `animate` method while providing
+different `top` values.
+
+The simplest way to _translate_ an element (which is the graphics programming
+term for "move") is to change either the `top`, `bottom`, `left`, or `right`
+properties. Using jQuery, these can be absolute or relative:
+
+**NOTE:** As it was introduced in the last lecture, we are going to throw in an
+example with an event listener/handler. Remind students their role and that we
+can write the event handler directly in-line!
 
 ```js
-$("button").click(method(){
-        $("#img1").animate({top: '200px'}, "fast");
-        $("#img2").animate({left: '+=20px'}, "slow");
-    });
+// alternate the animate functions to see the difference between absolute and relative translations
+precious.click(function() {
+  precious.animate({left: '500px'}, "fast") // absolute to an anchor
+  // precious.animate({left: '+=20px'}, "slow") // relative to the elements current position
+})
 ```
 
-In the above method, the click of the button triggers two events. The element
-with the id #img1 moves so that it's top edge is 200px below it's nearest
-ancestor. The element with the id #img2 moves so that it's left edge is 20px
-further right than it used to be. And all of this happens with the click from
-the user! Now we're really starting to get a feel for how pages work.
-
+As we experience in the browser when testing the above code, _absolute_
+translations occur according to some fixed anchor. _Relative_ translations occur
+according to the CSS position of the element (and are _not_ cumulative in this
+example). Now we're really starting to get a feel for how pages work! Even with
+the few tools we have now, there is endless [dankification][dankification] we
+can do to our (and other people's!) websites.
 
 
 ### Data & Interactivity
@@ -176,6 +190,9 @@ $('input').val("choice Z");
 
 #### Wrapping Up
 
- jQuery gives us a lot of flexibility and elegance when working with
+jQuery gives us a lot of flexibility and elegance when working with
 JavaScript. Selecting is only half the battle, and by leveraging the built-in
 methods, we learned about the heavy lifting jQuery provides to us. 
+
+[css-position]: https://www.w3schools.com/css/css_positioning.asp
+[dankification]: https://www.urbandictionary.com/define.php?term=dankify
