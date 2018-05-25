@@ -1,10 +1,17 @@
-# jQuery Methods, Animation
+# jQuery Methods and Animations
+
+**NOTE:** This lecture makes use of starter code found in `index.html`,
+`index.css`, `index.js`. Unlike the previous materials, we have included all the
+relative imports, (jQuery, the stylesheet, and our script), in `index.html`.
+Still, take a moment to show students the files and remind them where we are
+importing them and why we have to in `index.html`. 
 
 
 ## Objectives
 
 This lesson aims to dive deeper into jQuery, and how we can use it to augment
 our websites further with animations and interactivity. 
+
 
 ## SWBATS
 
@@ -48,8 +55,8 @@ method accepts an object of CSS `key: value`s as an argument.
 
 Let's imagine we have an image of a cat on our website (which we do) and that we
 want to make it bigger (which we very much do). We could achieve this with the
-`animate` method. Go ahead and put it in our `index.js` (jQuery, `index.js`, and `index.css` have all
-already been included in `index.html`):
+`animate` method. Go ahead and put it in our `index.js` (jQuery, `index.js`, and
+`index.css` have all already been included in `index.html`):
 
 ```js
 var precious = $("#dank-cat-gif")
@@ -61,10 +68,10 @@ precious.animate({
 })
 ```
 
-Any professional animator will tell you that how smooth something moves is just as
-important as it moving itself. jQuery has that covered, too, and the speed can
-optionally be set. The element will adjust to the new parameters over
-the given amount of time (in milliseconds):
+Any professional animator will tell you that how smooth something moves is just
+as important as it moving itself. jQuery has that covered, too, and the speed
+can optionally be set. The element will adjust to the new parameters over the
+given amount of time (in milliseconds):
 
 ```js
 var precious = $("#dank-cat-gif")
@@ -75,9 +82,15 @@ precious.animate({
 }, 1500)
 ```
 
-...in fact, we can take even take this a step further and fire off a function when the animation completes...
+ ...in fact, we can take even take this a step further and fire off a function
+when the animation completes...
 
-**NOTE:** To protect you from annoying ads, Chrome _won't play the following audio if you don't click the screen before the animation ends_. Make sure to click or interact with the website in any way before the animation completed. This is example is just for fun, try not to let students get hung up on audio elements, why the sound won't play unless we interact first, or why this isn't done with jQuery in `index.html`
+**NOTE:** To protect you from annoying ads, Chrome _won't play the following
+audio if you don't click the screen before the animation ends_. Make sure to
+click or interact with the website in any way before the animation completed.
+This is example is just for fun, try not to let students get hung up on audio
+elements, why the sound won't play unless we interact first, or why this isn't
+done with jQuery in `index.html`
 
 ```js
 var precious = $("#dank-cat-gif")
@@ -89,7 +102,7 @@ precious.animate({
 ```
 
 
-#### Changing Position and Relative Values with Events
+#### Translating, (or "Moving"), Elements
 
 Keep in mind that the [CSS default position][css-position] for all elements is
 static (i.e. `position: static` a.k.a. positions itself according to the flow of
@@ -120,7 +133,7 @@ precious.click(function() {
 })
 ```
 
-As we experience in the browser when testing the above code, _absolute_
+As we experience in the browser when testing the code above, _absolute_
 translations occur according to some fixed anchor. _Relative_ translations occur
 according to the CSS position of the element (and are _not_ cumulative in this
 example). Now we're really starting to get a feel for how pages work! Even with
@@ -130,7 +143,7 @@ can do to our (and other people's!) websites.
 
 ### Data & Interactivity
 
-So far we've learned how to manipulate elements with direct jQuery code. But we
+So far, we've learned how to manipulate elements with direct jQuery code. But we
 don't expect our users to do that! We can add interactivity to the page through
 things like buttons, forms and other ways to monitor user input, to give them a
 sense of control over the page experience. We can also collect data from them.
