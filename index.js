@@ -1,4 +1,4 @@
-var precious = $("#dank-cat-gif")
+var precious = $("#elegant-cat-gif")
 
 precious.animate({
   height: "100%", 

@@ -58,7 +58,7 @@ want to make it bigger (which we very much do). We could achieve this with the
 `index.css` have all already been included in `index.html`):
 
 ```js
-var precious = $("#dank-cat-gif")
+var precious = $("#elegant-cat-gif")
 
 // here, we are passing in an object saying which attributes we want to change to what values
 precious.animate({
@@ -73,7 +73,7 @@ can optionally be set. The element will adjust to the new parameters over the
 given amount of time (in milliseconds):
 
 ```js
-var precious = $("#dank-cat-gif")
+var precious = $("#elegant-cat-gif")
 
 precious.animate({
   height: "100%", 
@@ -92,7 +92,7 @@ elements, why the sound won't play unless we interact first, or why this isn't
 done with jQuery in `index.html`
 
 ```js
-var precious = $("#dank-cat-gif")
+var precious = $("#elegant-cat-gif")
 
 precious.animate({
   height: "100%", 
@@ -114,7 +114,7 @@ values: `relative`, `absolute` or `fixed`.
 a `position` value for the `<img>` tag (it has defaulted to `static`). In the
 elements tab, locate the `<img>` DOM element and update its style with 
 `position: relative` and try re-running the `animate` method while providing
-different `top` values.
+different `top` values. Following, you can update this permanently in `index.css`
 
 The simplest way to _translate_ an element (which is the graphics programming
 term for "move") is to change either the `top`, `bottom`, `left`, or `right`
@@ -164,69 +164,44 @@ validation, anyways?).
 Consider: have you ever entered data into a form, clicked "submit" and waited
 for the page to refresh only to be told your phone number needs to be in a
 different format? Oh, and along with that format issue, the website went ahead
-and erased your whole form? This is not dank -- this is the opposite of dank and 
+and erased your whole form? This is not elegant -- this is the opposite of elegant and 
 **_we_** are going to fix it!
 
-**NOTE:** This example makes use 
+**NOTE:** This example makes use `form-example.html`, with the JavaScript code
+imported from `form-example.js`. Make sure to switch gears and open it in
+Chrome.
 
 When users enter data on a form there is often a need to validate the data
 entered. We could have the user submit the form and task our server with the
-job, but there are several downsides to this.
+job, but there are several downsides (such as the one mentioned above)
+associated with this. Instead, we can validate right then and there using the
+jQuery we already know! Let's practice with an example where a user is supposed
+to enter their email. 
 
-Enter JavaScript and jQuery! By allowing us to **script on the frontend**, we
-can provide instantaneous feedback to the user. With traditional JavaScript we
-could accomplish this, but when we have jQuery at our disposal we're able to do
-it so much easier. Let's say you're building a form for an online order.
-Typically, you give your user an option to check if their shipping address is
-different than their billing address. If they click the box that they are
-different addresses, then they would expect an additional form to fill out for
-shipping address. In order to achieve this, you would want to check the `value`
-of the checkbox, and trigger the form to be filled out if it is checked with the
-`val` method. This allows us to collect all the data on a single page determined
-by logic.  Without this, a user would have to first submit their form, and, if
-they chose to click the box that they have different addresses, they would need
-to be redirected to a second form where they can enter the second address.
+**NOTE:** Query the students how they think we might go about doing this. We are
+looking for anything along the lines of "event listener / whenever the input is
+updated / checks if it is valid and changes the DOM somehow". All the code for
+the following example has been provided, except for the event listener/handler.
 
-The `val()` method returns the `value` attribute for an HTML element.
-
-Given the following HTML form for our shopping checkout:
-
-```html
-<form>
-  <input type="checkbox" value="same">Same as billing address
-  <input type="checkbox" value="different">Different than billing address
-</form>
-```
-
-We can **select** the value of an input with:
-```js
-$('input').val();
-```
-
-Very elegant! One thing to remember is that this method returns the very first
-match, so it would find the first input field and return `"same"`.
-
-What if we wanted to consider both? We could change our selector to look for the
-*selected* checkbox:
+Take a moment to review what we already have in `form-example.js`:
+  - a function that returns a boolean to whether a given argument is a valid email string
+  - a function that does something to reward the user
+  - a function that executes the validation check for the `<input id="email-input">` element
+  
+All we need to do now is attach the event listener, and make sure an appropriate handler is affixed to it, waiting to fire off whenever the contents of our input field change:
 
 ```js
-$('input:checked').val();
+$("#email-input").on("input", validateEmail)
 ```
 
-If you wanted to change the value of the input to "choice Z" instead of
-`"same"`, you would just pass a parameter to the `val` method:
+With this, a user no longer needs to provide a value, hit "submit" and hope for the best. Instead, they have immediate and satisfying validation in the form of an oversized kitten meme roaring at them. This, unlike having your form destroyed, is indeed **elegant**. 
+  
 
-```js
-$('input').val("choice Z");
-```
+#### Moving Forward
 
-
-
-#### Wrapping Up
-
-jQuery gives us a lot of flexibility and elegance when working with
-JavaScript. Selecting is only half the battle, and by leveraging the built-in
-methods, we learned about the heavy lifting jQuery provides to us. 
+jQuery gives us a lot of flexibility and elegance when improving our websites
+with JavaScript. Selecting is only half the battle, and by leveraging the
+built-in methods, we can let jQuery do most of the heavy lifting for us.
 
 [css-position]: https://www.w3schools.com/css/css_positioning.asp
 [dankification]: https://www.urbandictionary.com/define.php?term=dankify
