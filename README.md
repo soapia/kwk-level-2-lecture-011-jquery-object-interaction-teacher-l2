@@ -28,7 +28,7 @@ elements via **methods**.
 
 We have many different components that make up a typical webpage, and jQuery has
 specific methods that act on these components. Take, for example, how
-traditional (such as setting a background color of an element) can be done with
+traditional adjustments (such as setting a background color of an element) can be done with
 CSS. As you know, this would be a one-time setting when loading the page. What
 if instead we wanted to tweak the background color after the page loads? This is
 where jQuery can really spice things up: using some of jQuery's built-in
@@ -81,13 +81,13 @@ precious.animate({
 }, 1500)
 ```
 
- ...in fact, we can take even take this a step further and fire off a function
+ ...in fact, we can even take this a step further and fire off a function
 when the animation completes...
 
 **NOTE:** To protect you from annoying ads, Chrome _won't play the following
 audio if you don't click the screen before the animation ends_. Make sure to
 click or interact with the website in any way before the animation completed.
-This is example is just for fun, try not to let students get hung up on audio
+This example is just for fun, try not to let students get hung up on audio
 elements, why the sound won't play unless we interact first, or why this isn't
 done with jQuery in `index.html`
 
@@ -136,14 +136,14 @@ As we experience in the browser when testing the code above, _absolute_
 translations occur according to some fixed anchor. _Relative_ translations occur
 according to the CSS position of the element (and are _not_ cumulative in this
 example). Now we're really starting to get a feel for how pages work! Even with
-the few tools we have now, there is endless [dankification][dankification] we
+the few tools we have now, there is endless [dankification][https://www.urbandictionary.com/define.php?term=dankify] we
 can do to our (and other people's!) websites.
 
 
 ### Interactivity and Validation
 
-So far, we've mostly been manipulating elements directly jQuery code. What we
-would like to do is abstract the actual function calls and code from the user,
+So far, we've mostly been manipulating elements directly with jQuery code. What
+we would like to do is abstract the actual function calls and code from the user,
 so they simply experience interactivity as magic!
 
 We can add interactivity to the page with our old friend, the **event
@@ -163,7 +163,7 @@ validation, anyways?).
 
 Consider: have you ever entered data into a form, clicked "submit" and waited
 for the page to refresh only to be told your phone number needs to be in a
-different format? Oh, and along with that format issue, the website went ahead
+different format? Oh, and along with that formatting issue, the website went ahead
 and erased your whole form? This is not elegant -- this is the opposite of elegant and 
 **_we_** are going to fix it!
 
@@ -187,7 +187,7 @@ Take a moment to review what we already have in `form-example.js`:
   - a function that returns a boolean to whether a given argument is a valid email string
   - a function that does something to reward the user
   - a function that executes the validation check for the `<input id="email-input">` element
-  
+
 All we need to do now is attach the event listener, and make sure an appropriate handler is affixed to it, waiting to fire off whenever the contents of our input field change:
 
 ```js
@@ -195,7 +195,7 @@ $("#email-input").on("input", validateEmail)
 ```
 
 With this, a user no longer needs to provide a value, hit "submit" and hope for the best. Instead, they have immediate and satisfying validation in the form of an oversized kitten meme roaring at them. This, unlike having your form destroyed, is indeed **elegant**. 
-  
+
 
 #### Moving Forward
 
